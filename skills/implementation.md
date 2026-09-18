@@ -4,8 +4,9 @@ Use this workflow for any repository file edit, including code, configuration,
 tests, and documentation. Check the approval gates in `.agents/AGENTS.md`.
 
 Enter this workflow only when the user explicitly asks to change repository
-files. A question, bug report, expected-behavior statement, or diagnostic request
-is not an implementation request.
+files, or when it is the approved next workflow under `.agents/AGENTS.md`.
+A question, bug report, expected-behavior statement, or diagnostic request is
+not an implementation request.
 
 Before editing, give a concise inline plan: intended behavior, files to change,
 validation, and optional broader cleanup that will not be performed. Ask for

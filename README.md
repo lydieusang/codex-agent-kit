@@ -1,4 +1,4 @@
-# Agent Kit v2
+# Agent Kit
 
 A small workflow kit for Codex and other coding agents. The repository-root
 `AGENTS.md` is the entrypoint; it delegates to `.agents/AGENTS.md`, which routes
@@ -24,6 +24,13 @@ launcher prompts are required.
 
 The core policy stays intentionally short. Workflow-specific detail lives in
 individual files under `skills/`; an agent reads only the skill it needs.
+
+Codex orchestrates workflows dynamically. After each workflow, it checks whether
+the user's objective is complete; if a further workflow materially contributes,
+it proposes the workflow, reason, and scope for approval. There is no fixed
+lifecycle: a small change can finish after implementation, while a substantial
+feature may need planning, implementation, and evaluation. Approval applies only
+to the stated next step and does not bypass any workflow-specific gate.
 
 ## Optional feature workspaces
 

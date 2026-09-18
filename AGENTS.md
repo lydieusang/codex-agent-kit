@@ -1,4 +1,4 @@
-# Agent Kit v2
+# Agent Kit
 
 ## Principles
 
@@ -44,6 +44,18 @@ has several dependent tasks, or requires a decision the user has not made.
 If a request could mean analysis, planning, experimentation, or modification,
 state the uncertainty and options, then request clarification. Prefer the least
 intrusive workflow; never choose a modification by assumption.
+
+## Dynamic orchestration
+
+After each workflow, decide whether the user's overall objective is complete.
+If it is, report completion and stop. If further work materially contributes,
+select and propose the next independent workflow with a brief reason and scope.
+Do not propose a workflow merely because one is available.
+
+Ask for approval before an agent-proposed follow-on. That approval covers only
+the stated next step and never bypasses that workflow's existing approval gate.
+Treat `Approved.` as approval of the most recently stated, unambiguous step.
+Re-route when the user instead gives a new instruction.
 
 ## Approval gates
 
