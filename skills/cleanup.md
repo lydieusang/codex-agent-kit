@@ -1,7 +1,8 @@
 # Cleanup mode
 
 Use only when cleanup is explicitly requested. This is an IMPLEMENTATION mode:
-state the cleanup plan and files, then wait for approval before editing.
+state the cleanup plan and files. Outside LOOP, wait for approval before editing;
+inside LOOP, its initial authorization covers in-scope cleanup.
 
 Allowed work is behavior-preserving removal or simplification: dead code,
 unused imports, variables, functions, types, obsolete comments/docstrings, and

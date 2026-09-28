@@ -12,15 +12,14 @@ Inspect the relevant code and existing instructions first. Then define:
 5. a minimal ordered implementation plan.
 
 State alternatives only when they meaningfully affect cost, risk, or behavior.
-Recommend the smallest viable approach. Ask for approval before implementation.
-Planning approval approves the direction, not edits; IMPLEMENTATION still needs
-its file-change plan approved before editing.
-Do not edit repository files while planning; return to IMPLEMENTATION only after
-the user approves its file-change plan.
+Recommend the smallest viable approach. Do not edit repository files while
+planning. Outside LOOP, ask for approval of the direction, then obtain approval
+of the IMPLEMENTATION file-change plan before editing. Inside LOOP, transition
+to in-scope IMPLEMENTATION without another approval.
 
 Recommend an optional feature workspace when the work will likely span sessions
-or has multiple dependent tasks. After approval, initialize only the useful
-workspace files. Use this `tasks.json` shape:
+or has multiple dependent tasks. Initialize only useful workspace files through
+IMPLEMENTATION once authorized. Use this `tasks.json` shape:
 
 ```json
 {

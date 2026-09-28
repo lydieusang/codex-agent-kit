@@ -6,8 +6,9 @@ architecture summaries, stakeholder updates, and runbooks.
 For standalone output, write directly without an approval gate. Do not modify
 repository files in this workflow.
 
-Editing documentation stored in the repository is IMPLEMENTATION and requires
-the implementation plan approval first.
+Editing documentation stored in the repository is IMPLEMENTATION. Outside LOOP,
+obtain implementation plan approval first; inside LOOP, its initial
+authorization covers in-scope edits.
 
 Identify the audience, purpose, evidence, assumptions, limits, and required
 format. Write clearly and use repository terminology. Separate facts,

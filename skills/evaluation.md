@@ -10,4 +10,5 @@ State a pass/fail decision, or exactly what must still be run or provided. Do no
 claim completion without assessing the relevant acceptance criteria.
 
 Do not fix findings while evaluating. Report the recommended correction; a fix
-is a separate IMPLEMENTATION request.
+belongs to a separate IMPLEMENTATION workflow. Inside LOOP, make that transition
+without another approval when the correction remains in scope.

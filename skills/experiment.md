@@ -5,8 +5,10 @@ exploratory work.
 
 Before running any experiment, state the hypothesis, baseline,
 metrics, measurable success criteria, variables, inputs, and likely confounders.
-Ask for approval before execution. Do not run the experiment until the plan is
-approved. Keep experiment success distinct from implementation correctness.
+Outside LOOP, ask for approval before execution and wait. Inside LOOP, proceed
+without another approval only when the experiment is necessary, in scope, and
+reversible repository-local work. Keep experiment success distinct from
+implementation correctness.
 
 Afterward, report results against the baseline, regressions, unexpected outcomes,
 failure modes, confidence limits, and the supported or unsupported conclusion.

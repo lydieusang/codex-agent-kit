@@ -26,18 +26,23 @@ Reason:
 - **PLANNING** — substantial features or changes needing a specification and a
   deliberate implementation plan. Read `skills/planning.md`; do not implement.
 - **IMPLEMENTATION** — any repository file edit: code, configuration, tests, or
-  documentation. Read `skills/implementation.md` and obtain approval before editing.
+  documentation. Read `skills/implementation.md` and follow the approval rules
+  below.
   - **CLEANUP mode** — only when explicitly requested; also read `skills/cleanup.md`.
   - **PR REVIEW mode** — addressing review feedback; also read `skills/pr_review.md`.
 - **EXPERIMENT** — research, benchmarks, tuning, or exploratory comparisons.
-  Read `skills/experiment.md`; obtain approval before execution.
+  Read `skills/experiment.md` and follow the approval rules below.
 - **EVALUATION** — dedicated validation, regression assessment, or release
   readiness. Read `skills/evaluation.md`; assess and report, but do not fix.
 - **DOCUMENTATION** — standalone documentation, reports, runbooks, or summaries.
   Read `skills/documentation.md`; editing a repository document is IMPLEMENTATION.
+- **LOOP** — only when the user explicitly delegates autonomous end-to-end work.
+  Read `skills/loop.md` and use the existing workflows as needed. Never infer LOOP
+  from task size or complexity.
 
-Use PLANNING instead of IMPLEMENTATION when the work is likely to span sessions,
-has several dependent tasks, or requires a decision the user has not made.
+Outside LOOP, use PLANNING instead of IMPLEMENTATION when the work is likely to
+span sessions, has several dependent tasks, or requires a decision the user has
+not made.
 
 ## Default when uncertain
 
@@ -47,19 +52,19 @@ intrusive workflow; never choose a modification by assumption.
 
 ## Dynamic orchestration
 
-After each workflow, decide whether the user's overall objective is complete.
-If it is, report completion and stop. If further work materially contributes,
-select and propose the next independent workflow with a brief reason and scope.
-Do not propose a workflow merely because one is available.
+Outside LOOP, after each workflow, assess whether the user's objective is
+complete. If so, report and stop. Otherwise, propose only a materially useful
+next independent workflow with its reason and scope. Wait for approval; it
+covers that step only and never bypasses its gate. Treat `Approved.` as approval
+of the latest unambiguous proposal; re-route if the user gives a new instruction.
 
-Ask for approval before an agent-proposed follow-on. That approval covers only
-the stated next step and never bypasses that workflow's existing approval gate.
-Treat `Approved.` as approval of the most recently stated, unambiguous step.
-Re-route when the user instead gives a new instruction.
+Inside an explicitly authorized LOOP, follow `skills/loop.md` for in-scope
+workflow transitions.
 
 ## Approval gates
 
-Every IMPLEMENTATION change requires approval before editing.
+Outside LOOP, every IMPLEMENTATION change, including CLEANUP, requires approval
+before editing.
 
 Before editing:
 
@@ -71,10 +76,16 @@ Before editing:
 Do not edit code, configuration, tests, or repository documentation until the
 plan is approved. Explicit approval authorizes only the approved plan.
 
-Cleanup also requires approval. A direct request to address specific PR review
-comments authorizes only narrow fixes for those comments. For ambiguity, scope
-expansion, architecture, APIs, schemas, dependencies, security, privacy, or
-destructive work, clarify the decision before presenting the plan.
+A direct request to address specific PR review comments authorizes only narrow
+fixes for those comments. For ambiguity, scope expansion, architecture, APIs,
+schemas, dependencies, security, privacy, or destructive work, clarify the
+decision before presenting the plan.
+
+Inside LOOP, the initial authorization covers necessary, in-scope, reversible
+repository-local actions, including corrections and workflow transitions,
+without repeating these gates. This takes precedence over routine approval
+instructions in any selected skill. Ask only for decisions that meet an
+escalation condition in `skills/loop.md`.
 
 ## Implementation boundaries
 
