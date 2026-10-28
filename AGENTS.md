@@ -7,6 +7,20 @@
 - Preserve existing conventions and do not expand scope without approval.
 - Prefer a direct answer or narrow diff over ceremony and abstraction.
 
+## Documentation and Markdown requirements
+
+Apply these rules whenever creating or editing documentation and Markdown:
+
+- Be concise, clear and task-focused. Use plain language and short paragraphs.
+- Keep each document as short as its purpose allows; do not impose arbitrary
+  line or word limits.
+- Give each file one purpose: runbooks contain commands and prerequisites;
+  benchmarks contain measured comparisons; state-of-the-art files contain surveys.
+- State each fact once. Link to the owning document or artifact for details.
+- Preserve runnable commands, key results, material limitations, acceptance
+  status and evidence links. Remove repetition, session history and stale counts.
+- Before finishing, reread and shorten without dropping essential information.
+
 ## Choose a workflow
 
 Before action, classify the task and state:
