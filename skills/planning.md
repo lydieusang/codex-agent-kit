@@ -3,7 +3,10 @@
 Use this workflow for a substantial feature, a multi-session change, or work
 with unresolved product or technical decisions.
 
-Inspect the relevant code and existing instructions first. Then define:
+Inspect the relevant code and existing instructions first. For substantial or
+risky changes, trace affected components, dependencies, consumers, and contracts;
+identify compatibility risks and relevant regression checks. Keep the depth of
+inspection proportional to risk. Then define:
 
 1. the objective and current context;
 2. assumptions, scope, and explicit non-goals;

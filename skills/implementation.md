@@ -9,6 +9,9 @@ it is needed within an explicitly authorized LOOP.
 A question, bug report, expected-behavior statement, or diagnostic request is
 not an implementation request.
 
+Before substantial or risky changes, perform the impact analysis described in
+[Planning](planning.md), reusing current findings when available.
+
 Before editing outside LOOP, give a concise inline plan: intended behavior,
 files to change, validation, and optional broader cleanup that will not be
 performed. Ask for approval and wait. A request to change a file is not
@@ -24,5 +27,9 @@ handoff, and evaluation records at meaningful checkpoints.
 
 Validate in proportion to the risk: run targeted tests and relevant lint/type
 checks when available; otherwise state what was checked and what remains unrun.
+For bug fixes, reproduce the failure before editing when feasible and add focused
+regression tests where practical. Confirm they fail for the original bug and pass
+with the fix, and verify affected behavior using the relevant regression checks.
+Report any reproduction, test, or validation gaps and their reasons.
 At completion, report the behavior changed, files changed, validation, and any
 intentionally deferred work.
