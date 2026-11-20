@@ -32,9 +32,10 @@ lifecycle: a small change can finish after implementation, while a substantial
 feature may need planning, implementation, and evaluation. Approval applies only
 to the stated next step and does not bypass any workflow-specific gate.
 
-For explicitly delegated end-to-end work, request **LOOP** instead. For example:
-"Use LOOP to implement and validate this feature completely." LOOP dynamically
-uses the same workflows and corrects in-scope failures without intermediate
+For explicitly delegated end-to-end work, authorize **LOOP** by name or
+natural language, for example: "Build and validate this feature autonomously
+from start to finish, without intermediate approvals." LOOP dynamically uses
+the same workflows and corrects in-scope failures without intermediate
 approval. It stops when the goal is verified or a decision needs the user.
 Ordinary requests retain the human-gated path; task size alone never activates
 LOOP. LOOP does not imply permission to commit, push, or deploy.

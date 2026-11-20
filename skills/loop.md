@@ -1,25 +1,18 @@
 # LOOP
 
-Use only when the user explicitly delegates autonomous end-to-end execution.
-Task size, complexity, or approval of a normal workflow does not activate LOOP.
-LOOP orchestrates the existing workflows; it does not replace their skills.
+LOOP orchestrates existing workflow skills under explicit end-to-end
+authorization; normal workflow approval does not activate it.
 
-First inspect the repository and establish the authorized goal, scope,
-constraints, and smallest set of verifiable completion criteria; state material
-assumptions. Those criteria are the stopping condition: finish when
-proportionate validation shows they are satisfied, rather than continuing
-because more work is possible. Select and read only the workflow skills needed
-for the goal. There is no fixed sequence or mandatory workspace; use the core
-optional workspace rule.
+Inspect the repository; define the authorized goal, scope, constraints,
+assumptions, and minimal verifiable completion criteria from user intent and
+repository evidence. Do not invent features. Honor user checkpoints and
+restrictions. Stop when proportionate validation meets the criteria. Load only
+needed skills; no fixed workflow sequence or mandatory workspace.
 
-The initial LOOP authorization takes precedence over every selected skill's
-routine approval gate for necessary, in-scope, reversible repository-local
-work. Do not request approval between stages, including for in-scope fixes;
-follow each skill's other instructions. After each meaningful stage, check the
-criteria and finish if they pass. Continue only when concrete evidence shows an
-authorized requirement is unmet or a defect, regression, or validation failure
-needs correction. Optional improvements, unsupported concerns, and unrelated
-findings do not justify another iteration.
+Within authorized scope, execute reversible repository-local work and fixes
+without intermediate approvals; retain other skill rules. Recheck completion
+after meaningful stages. Iterate only on evidenced unmet requirements, defects,
+or regressions—not optional improvements or unrelated findings.
 
 IMPLEMENTATION owns repository edits, including documentation edits. EVALUATION
 remains read-only: take its findings into a separate IMPLEMENTATION correction,
@@ -27,14 +20,10 @@ then validate and evaluate again as needed. Standalone documentation uses
 DOCUMENTATION. Use CLEANUP only when the LOOP request explicitly includes
 cleanup and it materially helps meet the goal; keep it behavior-preserving.
 
-Run proportionate tests, lint, type checks, builds, or other relevant
-validation against the criteria and changed risk areas. Reuse relevant evidence
-and avoid equivalent checks unless a change or specific failure makes them
-informative again. For each correction, identify and verify the evidence it
-should change. Continue difficult work while attempts materially narrow the
-cause, resolve a failure, or increase confidence; otherwise, treat repeated
-lack of progress as non-convergence and escalate rather than looping
-indefinitely.
+Validate against criteria and changed risk areas with proportionate tests,
+lint, type checks, or builds. Reuse evidence; rerun checks when changes warrant
+it. Verify each correction's intended effect. Escalate on repeated lack of
+measurable progress, not merely on task difficulty.
 
 Pause for a user decision when the goal is materially ambiguous; meeting it
 needs meaningful scope expansion; new evidence invalidates an important

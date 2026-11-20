@@ -11,15 +11,11 @@
 
 Apply these rules whenever creating or editing documentation and Markdown:
 
-- Be concise, clear and task-focused. Use plain language and short paragraphs.
-- Keep each document as short as its purpose allows; do not impose arbitrary
-  line or word limits.
-- Give each file one purpose: runbooks contain commands and prerequisites;
-  benchmarks contain measured comparisons; state-of-the-art files contain surveys.
-- State each fact once. Link to the owning document or artifact for details.
-- Preserve runnable commands, key results, material limitations, acceptance
-  status and evidence links. Remove repetition, session history and stale counts.
-- Before finishing, reread and shorten without dropping essential information.
+- Write concise, task-focused documents; give each file one purpose.
+- State facts once and link to their source of truth.
+- Preserve runnable commands, key results, limitations, acceptance status, and
+  evidence links; remove repetition, stale counts, and session history.
+- Reread and shorten without losing essential information.
 
 ## Choose a workflow
 
@@ -32,11 +28,9 @@ Reason:
 
 - **LIGHTWEIGHT** — questions, investigation, navigation, diagnosis, and design
   discussion.
-  - Answer directly and with evidence.
-  - Do not generate a plan or specification, request approval, or edit files.
-  - Do not suggest implementation unless relevant; report the diagnosis and stop.
-  - “Search”, “inspect”, “compare”, “retrieve”, and “explain” are read-only.
-    If “retrieve from another branch” could mean inspect or copy, clarify first.
+  - Answer with evidence; do not plan, request approval, or edit.
+  - Treat search, inspection, comparison, and retrieval as read-only; clarify
+    ambiguous requests to retrieve content from another branch.
 - **PLANNING** — substantial features or changes needing a specification and a
   deliberate implementation plan. Read `skills/planning.md`; do not implement.
 - **IMPLEMENTATION** — any repository file edit: code, configuration, tests, or
@@ -50,9 +44,9 @@ Reason:
   readiness. Read `skills/evaluation.md`; assess and report, but do not fix.
 - **DOCUMENTATION** — standalone documentation, reports, runbooks, or summaries.
   Read `skills/documentation.md`; editing a repository document is IMPLEMENTATION.
-- **LOOP** — only when the user explicitly delegates autonomous end-to-end work.
-  Read `skills/loop.md` and use the existing workflows as needed. Never infer LOOP
-  from task size or complexity.
+- **LOOP** — explicit autonomous end-to-end delegation, by name or natural
+  language. Read `skills/loop.md`. Size, multiple stages, or a complete-feature
+  request alone do not authorize LOOP.
 
 Outside LOOP, use PLANNING instead of IMPLEMENTATION when the work is likely to
 span sessions, has several dependent tasks, or requires a decision the user has
@@ -60,46 +54,31 @@ not made.
 
 ## Default when uncertain
 
-If a request could mean analysis, planning, experimentation, or modification,
-state the uncertainty and options, then request clarification. Prefer the least
-intrusive workflow; never choose a modification by assumption.
+When intent is ambiguous, clarify rather than assume permission to modify.
+Without explicit autonomous delegation, use normal routing; offer LOOP as an
+opt-in alternative only when materially useful.
 
 ## Dynamic orchestration
 
-Outside LOOP, after each workflow, assess whether the user's objective is
-complete. If so, report and stop. Otherwise, propose only a materially useful
-next independent workflow with its reason and scope. Wait for approval; it
-covers that step only and never bypasses its gate. Treat `Approved.` as approval
-of the latest unambiguous proposal; re-route if the user gives a new instruction.
-
-Inside an explicitly authorized LOOP, follow `skills/loop.md` for in-scope
-workflow transitions.
+Outside LOOP, stop when the objective is met; otherwise propose only a useful
+next workflow with reason and scope. Wait for approval of that step and honor
+its gate. `Approved.` applies to the latest unambiguous proposal; new
+instructions trigger re-routing. Inside LOOP, follow `skills/loop.md`.
 
 ## Approval gates
 
-Outside LOOP, every IMPLEMENTATION change, including CLEANUP, requires approval
-before editing.
-
-Before editing:
-
-1. State the minimal file-change plan.
-2. List the files to modify.
-3. Identify optional broader cleanup separately.
-4. Ask for approval and wait.
-
-Do not edit code, configuration, tests, or repository documentation until the
-plan is approved. Explicit approval authorizes only the approved plan.
+Outside LOOP, before IMPLEMENTATION (including CLEANUP), state the minimal
+file-change plan, affected files, and optional broader cleanup separately.
+Wait for approval before editing; approval covers only that plan.
 
 A direct request to address specific PR review comments authorizes only narrow
 fixes for those comments. For ambiguity, scope expansion, architecture, APIs,
 schemas, dependencies, security, privacy, or destructive work, clarify the
 decision before presenting the plan.
 
-Inside LOOP, the initial authorization covers necessary, in-scope, reversible
-repository-local actions, including corrections and workflow transitions,
-without repeating these gates. This takes precedence over routine approval
-instructions in any selected skill. Ask only for decisions that meet an
-escalation condition in `skills/loop.md`.
+Inside LOOP, the initial authorization overrides routine skill approval gates
+for necessary, in-scope, reversible repository-local work. Follow
+`skills/loop.md` for escalation.
 
 ## Implementation boundaries
 

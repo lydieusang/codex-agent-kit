@@ -18,8 +18,10 @@ performed. Ask for approval and wait. A request to change a file is not
 approval of the plan. Inside LOOP, check that the edit fits its authorization
 and proceed without another approval.
 
-Once authorized, implement the smallest safe diff. Do not turn a small request
-into a formal specification.
+Once authorized, complete the approved plan through validation and in-scope
+corrections without further approval. Escalate material changes to scope,
+approach, or risk under the core rules. Keep the diff minimal; do not turn a
+small request into a formal specification.
 
 For planned work, follow the authorized specification and plan. If an
 active feature workspace exists, use its task order and update task status,
